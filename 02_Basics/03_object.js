@@ -9,15 +9,10 @@ const {courseInstructor: instructor} = course // called destructuring
 
 console.log(instructor); // now no need to give course.courseinstructor
 
-// this is json
+// this is json and not object
+// api in json form
 // {
 //     "id":1,
 //     "coursename":"nothing",
 //     "price":"free"
 // }
-
-[
-    {
-        
-    }
-]
