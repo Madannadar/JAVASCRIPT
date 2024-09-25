@@ -1,0 +1,16 @@
+// phase 1 pe global execution banta h on this 
+// phase 2 memory phase // all var is given value undefined 
+// phase 3 execution phase // after globle execution context is done it is deleted
+
+// types of execution context
+//1.globle 2.funciton 3.eval
+let val1 = 10
+let val2 = 5
+function addNum(num1, num2){
+    let total = num1 + num2
+    return total
+}
+// phase 2 and 3 will be executed as much times function is called 
+let res1 = addNum(val1,val2)
+let res2 = addNum(10,2)
+
