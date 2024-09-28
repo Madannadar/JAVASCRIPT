@@ -1,0 +1,27 @@
+DOM manupalation karne easy tab hoga jab i know to select my tags 
+
+innerText , innerHTML, innerContent all give the text in it 
+
+innerText will show only text visible 
+innerContent will show all text see in dom.html
+innerHTML will give pura html <span> bhi
+
+
+document.querySelector('h1')
+will give first h1 tag 
+
+const h1tag = document.querySelectorAll('h1')
+
+templist.forEach(function (i) {
+    i.style.color = 'cyan'
+})
+
+-----------------------convert HTMLCollection into array---------------------------
+
+const 1 = document.getElememtByClassName('listItem')
+Array.from(listItem)
+
+
+ConvertedArray.forEach(function (i) {
+    i.innerText = "madan"
+})

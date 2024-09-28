@@ -1,0 +1,41 @@
+<!-- console.dir(document) in inspect 
+ inside documet.----  there are so many methods like location , links, and all while will give in htmlCollection-->
+
+ <!-- 
+                            DOM diagram 
+
+                               window => 
+                              document =>             
+                                html => 
+(1st child) Head                                        (2nd child) Body 
+title , meta tag                                              div
+text node,metatag=> attribute                           attribute , para , h1 
+                                                        h1 => attribute , text node
+                                                        para => text node
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: wheat;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id = "1"class="heading">DOM learning on chai aur code</h1>
+        <h1 id = "3"class="heading">DOM learning on chai aur code444444</h1>
+        <p id="2">Lorem ipsum dolor sit amet <span style="display: none;">consectetur, adipisicing</span></p>
+        <li class="listItem">one</li>
+        <li class="listItem">two</li>
+        <li class="listItem">three</li>
+    </div>
+</body>
+</html>
+
