@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM3</title>
+</head>
+<body style="background-color: black; color: wheat;">
+    <div class="parent"></div>
+</body>
+<script>
+    const div = document.createElement('div')
+    div.className = 'main'
+    div.id = Math.round(Math.random() * 10 + 1) 
+    div.setAttribute("title", "generated title")
+    div.style.backgroundColor = 'green'
+    div.style.padding = '12px'
+    // div.innerHTML = "chai aur code"  method 1
+
+    const addText = document.createTextNode('Chai aur Code') // method 2 
+    div.appendChild(addText)
+    
+    document.body.appendChild(div)
+    // console.log(div);
+
+
+    // practice 
+    const newEle = document.createElement('noob')
+    const addText2 = document.createTextNode("madan is god")
+    newEle.appendChild(addText2)
+    document.body.appendChild(newEle)
+    newEle.style.backgroundColor = 'cyan'
+    newEle.style.padding = '12px'
+   
+
+</script>
+</html>
