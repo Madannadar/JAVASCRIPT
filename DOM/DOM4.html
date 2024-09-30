@@ -1,0 +1,61 @@
+<!-- video no 34 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-4</title>
+</head>
+<body style="background-color: black; color: wheat;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    <h1>para...</h1>
+    <p class="testing"></p>
+</body>
+<script>
+    // const dom = document.createElement('dom')
+    // const addText3 = document.createTextNode("Python")
+    // dom.appendChild(addText3)
+    // document.body.appendChild(dom)
+ 
+    // -----------------------Adding,replacing/Edit,removing-------------------------
+
+    // types of adding 
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}` // need to travers too the last to append new text in innerHtML
+        document.querySelector('.language').appendChild(li) 
+    }
+    addLanguage('C++')
+    addLanguage('Python')
+
+    //type of adding
+    // innerHTML < appendChild
+    // better aproach
+    function addOptiLang(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName)) // different type of appending where a text node is created and is added at the last automatically so no need to traverl to the last
+        document.querySelector('.language').appendChild(li)        
+    }
+    addOptiLang('Game Development')
+
+
+    // types of replacing
+    const secondLang = document.querySelector('li:nth-child(4)')
+    // secondLang.innerHTML = "MOJO"
+    const newli = document.createElement('li')
+    newli.textContent = "MOJO" // textContent aprox equle to innerHTML
+    secondLang.replaceWith(newli)
+ 
+    // types of replacing
+    const firstLang = document.querySelector('li:first-child') // last-child, nth-child (n)
+    firstLang.outerHTML = '<li>JAVA</li>'
+
+
+    // type of removing
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove() 
+
+</script>
+</html>
