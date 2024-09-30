@@ -25,13 +25,16 @@ html {
   #white {
     background: white;
   }
-  #blue {
-    background: blue;
+  #plum {
+    background: plum;
   }
   #yellow {
     background: yellow;
   }
   #cyan {
     background: cyan;
+  }
+  #greenyellow{
+    background: greenyellow;
   }
   

@@ -18,6 +18,10 @@ buttons.forEach((button) => {
         body.style.backgroundColor = e.target.id;
       case ('cyan'):
         body.style.backgroundColor = e.target.id;
+      case ('plum'):
+        body.style.backgroundColor = e.target.id;
+      case ('greenyellow'):
+        body.style.backgroundColor = e.target.id;
     }
   })
 })
