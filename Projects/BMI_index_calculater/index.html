@@ -8,19 +8,13 @@
     <link rel="stylesheet" href="../styles.css" />
     <title>BMI Calculator</title>
   </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
-        >Youtube channel</a
-      >
-    </nav>
+  <body style="background-color: black; color: wheat;">
     <div class="container">
       <h1>BMI Calculator</h1>
       <form>
-        <p><label>Height in CM: </label><input type="text" id="height" /></p>
-        <p><label>Weight in KG: </label><input type="text" id="weight" /></p>
-        <button>Calculate</button>
+        <p><label>Height in CM: </label><input type="text" placeholder="eg:185 CM" id="height" style="background-color: black; color: wheat;"/></p>
+        <p><label>Weight in KG: </label><input type="text" placeholder="eg:75 Kg" id="weight" style="background-color: black; color: wheat;"/></p>
+        <button style="background-color: black; color: wheat;">Calculate</button>
         <div id="results"></div>
         <div id="weight-guide">
           <h3>BMI Weight Guide</h3>
