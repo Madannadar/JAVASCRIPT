@@ -1,3 +1,4 @@
+<!-- bubbling starts from small to big so it prints cliked owl then image in line 39 and 43 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,11 +32,19 @@
     // clientX, clientY, screenX, screenY
     //altKey, ctrlKey, shiftKey, keyCode
 
-    document.getElementById('owl').addEventListener('click', function(e){ // e => event object
-        console.log(e);
-    },false) // total 3 para first is what event then what to do on that event and one true or false its naturally false so no need to write it
-    
-    
+     // total 3 para first is what event then what to do on that event and one true or false its naturally false so no need to write it
+    // event propogation => 2 type event bubbling and event capturing false means event bubbling and true means event capturing
 
+    document.getElementById('images').addEventListener('click', function(e){ // e => event object
+        console.log("clicked on ul");
+    },false)
+    
+    // document.getElementById('owl').addEventListener('click', function(e){ // e => event object
+    //     console.log("clicked on owl");
+    // },false)
+    document.getElementById('owl').addEventListener('click', function(e){ // e => event object
+        console.log("clicked on owl");
+        e.stopPropagation() // similar to preventDefault so it stops from bubbling so output will be only ow
+    },false)
 </script>
 </html>
