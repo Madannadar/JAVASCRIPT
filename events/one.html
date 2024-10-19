@@ -46,5 +46,10 @@
         console.log("clicked on owl");
         e.stopPropagation() // similar to preventDefault so it stops from bubbling so output will be only ow
     },false)
+
+    document.getElementById('google').addEventListener('click', function(e){
+        e.preventDefault();
+        console.log("google clicked");
+    },false)
 </script>
 </html>
