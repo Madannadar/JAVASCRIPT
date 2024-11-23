@@ -1,4 +1,6 @@
-<!-- bubbling starts from small to big so it prints cliked owl then image in line 39 and 43 -->
+<!-- bubbling starts from small to big so it prints cliked owl then image in line 39 and 43 in this example:1)images 2)li 3)ul-->
+ <!-- capturing is when the 3rd parameter is true so it comes from outer element -->
+ <!-- js events me sare code sequencely run hota h  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +28,7 @@
 
     //attachEvent() used in old time to run in internet exploerer 
     //jQuery - on used in jQuery language
-
+// study all the topics of event below 
     // base events => type, timestamp, defaultPrevented,\
     // target, toElement, srcElement, currentTarget
     // clientX, clientY, screenX, screenY
@@ -35,21 +37,47 @@
      // total 3 para first is what event then what to do on that event and one true or false its naturally false so no need to write it
     // event propogation => 2 type event bubbling and event capturing false means event bubbling and true means event capturing
 
-    document.getElementById('images').addEventListener('click', function(e){ // e => event object
-        console.log("clicked on ul");
-    },false)
+    // document.getElementById('images').addEventListener('click', function(e){ // e => event object
+    //     console.log("clicked on ul"); // addEventListener gives more features then onclick directly on the id
+    // },false)
     
+    // // document.getElementById('owl').addEventListener('click', function(e){ // e => event object
+    // //     console.log("clicked on owl");
+    // // },true)
     // document.getElementById('owl').addEventListener('click', function(e){ // e => event object
     //     console.log("clicked on owl");
+    //     e.stopPropagation() // similar to preventDefault so it stops from bubbling so output will be only ow
     // },false)
-    document.getElementById('owl').addEventListener('click', function(e){ // e => event object
-        console.log("clicked on owl");
-        e.stopPropagation() // similar to preventDefault so it stops from bubbling so output will be only ow
-    },false)
 
     document.getElementById('google').addEventListener('click', function(e){
         e.preventDefault();
-        console.log("google clicked");
+        // e.stopPropagation();// only clicked on google is shown and not the ul clicked 
+        // console.log("google clicked");
     },false)
+
+
+// removing the image by clicking on it 
+    document.querySelector('#images').addEventListener
+    ('click',function(e){
+        // console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        // let removeIt = e.target.parentNode
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // removeIt.remove();
+    },false)
+
+
+//my try
+    // const Disapear1 =document.getElementById('photoshop') 
+    // Disapear1.addEventListener('click',function(e){
+    //     if(Disapear1.style.display == 'none')
+    //         Disapear1.style.display == 'block';
+    //     else
+    //     Disapear1.style.display == 'none';
+    // },false)
 </script>
 </html>
