@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){ //timeout will run once 
+    //     console.log("Madan");
+    // },2000)
+
+    // setInterval(function(){ // will keep on printing after the interval 
+    //     console.log("Madan");
+    // },2000)
+
+    // const different_method = function(){
+    //     console.log("Arun");
+    // }
+    // setInterval( different_method,2000);
+
+    const timeout1 = function(){
+        document.querySelector('h1').innerHTML="madan's new path";
+    }
+    const changeMe = setTimeout(timeout1,2000); // changes
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe);
+        console.log("Stopped");
+    })
+</script>
+</html>
