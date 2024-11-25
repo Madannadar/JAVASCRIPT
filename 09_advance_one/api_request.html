@@ -1,0 +1,51 @@
+<!-- fetch is new before it was xml http request(ajax request) -->
+ <!-- document.querySelector(".card img").setAttribute("src" , `${data.avatar_url}`); -->
+  <!-- is used to get image and display it  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: wheat;">
+    <div class="card">
+        <img src="img_avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4>John Doe</h4>
+        </div>
+      </div>
+    </div>
+</body>
+<style>
+    .card {
+        /* Add shadows to create the "card" effect */
+        width: 500px;
+        height: 600px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+      }
+    .container {
+        padding: 2px 16px;
+      }
+      </style>
+<script>
+    const requestUrl = 'https://api.github.com/users/madannadar';
+    const old_method = new XMLHttpRequest();
+    old_method.open('GET',requestUrl)
+    old_method.onreadystatechange = function(){
+        console.log(old_method.readyState);   
+        if (old_method.readyState === 4){
+            const data = JSON.parse(this.responseText) // JOSN.parse converts the data into object because down below we have seen that the data comes in string format
+            console.log(typeof data); // string
+            const noob = (data.following);
+            console.log(data.following);
+
+            document.querySelector(".card img").setAttribute("src" , `${data.avatar_url}`);
+            document.querySelector("h4").innerHTML = `${data.name} , Followers : ${data.followers}`;
+            document.querySelector("h4").style.fontWeight = `bold`;
+            }
+    }
+    old_method.send();
+</script>
+</html>
