@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body style="background-color: black; color: wheat;">
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.Library = "React"
+            this.server = "http://localhost:300"
+
+            // requirement button ka reference and ek action on that link
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this)) // using bind so that the reference of all the this is binded into the on click event
+        }
+        handleClick(){
+            console.log("button Clicked");
+            console.log(this);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
